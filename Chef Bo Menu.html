@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Menu for You</title>
+    <style>
+        body {
+            width: 100%;
+            margin: auto;
+
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-size: 24px;
+            padding: 20px 0;
+
+            background-color: #ff9999;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .menu {
+            margin: 20px;
+        }
+        .menu-item {
+            box-sizing: border-box;
+            width: 100%;
+            float: none;
+            margin-bottom: 20px;
+
+            text-align: center;
+
+            width: 48%;
+            float: left;
+            margin-right: 2%;
+
+            background-color: white;
+            border: 1px solid #ffcccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .menu-item img {
+            display: block;
+            margin: 0 auto;
+            width: 50%;
+            height: auto;
+
+            max-width: 50%;
+            height: auto;
+
+            width: 100%;
+            border-radius: 5px;
+        }
+        .menu-item h3 {
+            font-family: 'Dancing Script', cursive;
+
+            font-size: 1.5em;
+
+            margin: 0;
+        }
+        .menu-item p {
+            font-family: 'Microsoft YaHei', sans-serif;
+<!--            font-style: italic;-->
+
+            margin: 10px 0 0 0;
+        }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>欢迎光临 我琪琪宝贝</h1>
+        <p>Bobo私厨为您提供宾至如归的五星服务</p>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://drive.google.com/uc?export=view&id=1KELjSc0vJ3TXKIAjPwkxnxUjYP1WaRzN
+" alt="照烧三文鱼糙米饭">
+    <h3>照烧三文鱼糙米饭</h3>
+            <input type='number' name='quantity' min='0' max='10' step='1' value='0'>
+    <p>描述：经典减脂，好吃不贵。</p>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://drive.google.com/uc?export=view&id=1AfhtlcTBRXwLwc30kqCIT4N31-Pvqc2J
+" alt="清蒸苏格兰龙虾">
+    <h3>清蒸苏格兰龙虾</h3>
+            <input type='number' name='quantity' min='0' max='10' step='1' value='0'>
+    <p>描述：经典浙江味，请提前2天预定。</p>
+    </div>
+
+    <div class="menu-item">
+        <img src="https://drive.google.com/uc?export=view&id=1riyGM_32aeZLdI0uCOVPnxA9xXHlNdNC
+" alt="金汤乌冬">
+    <h3>金汤乌冬</h3>
+            <input type='number' name='quantity' min='0' max='10' step='1' value='0'>
+    <p>描述：啥也不说了，就是好吃好看。</p>
+    </div>
+
+    <script>
+        // JavaScript for interactive elements can be added here
+    </script>
+
+<!--    <form action="#" method="post">-->
+<!--        <h2>Place Your Order</h2>-->
+<!--        <p>Select the dishes you'd like to order:</p>-->
+<!--        <div>-->
+<!--            &lt;!&ndash; Dynamically generated checkbox list based on menu items &ndash;&gt;-->
+<!--            &lt;!&ndash; Example Checkbox: &ndash;&gt;-->
+<!--            &lt;!&ndash; <input type="checkbox" id="dish1" name="dish1">-->
+<!--            <label for="dish1">Dish Name 1</label><br> &ndash;&gt;-->
+<!--        </div>-->
+<!--        <input type="submit" value="Submit Order">-->
+<!--    </form>-->
+
+
+    
+    <div class="reservation-time">
+        <h2>预定用餐时间</h2>
+        <label for="reservation-date">日期：</label>
+        <input type="date" id="reservation-date" name="reservation-date">
+        <label for="reservation-time">时间：</label>
+        <input type="time" id="reservation-time" name="reservation-time">
+    </div>
+
+    <div class="summary-box">
+        <h2>Your Order</h2>
+        <p>Items selected will be listed here...</p>
+        <!-- This will require JavaScript to dynamically update based on selections -->
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var orderSummary = document.querySelector('.summary-box p');
+            var quantityInputs = document.querySelectorAll('input[type="number"]');
+
+            quantityInputs.forEach(function(input) {
+                input.addEventListener('change', function() {
+                    var summaryText = '';
+                    quantityInputs.forEach(function(qInput) {
+                        var dishName = qInput.previousElementSibling.textContent;
+                        var quantity = qInput.value;
+                        if(quantity > 0) {
+                            if(quantity > 0) summaryText += dishName + ': ' + quantity + '份<br>';
+                        }
+                    });
+                    orderSummary.textContent = summaryText;
+                });
+            });
+        });
+    </script>
+
+<div style='clear: both;'></div>
+        <div style='clear: both;'></div>
+</body>
+</html>
